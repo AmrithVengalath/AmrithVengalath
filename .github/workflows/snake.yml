@@ -1,0 +1,40 @@
+name: snake
+
+on:
+  schedule:
+    # 06:00 UTC every Sunday.
+    - cron: "0 6 * * 0"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/snake.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      # Palettes match assets/*.svg: cyan on void for dark, deep cyan on white
+      # for light. Rendered to an orphan branch so main stays free of binaries.
+      - name: Render the contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?color_snake=#22d3ee&color_dots=#161c2e,#0e4f61,#12798f,#1cb0cd,#22d3ee
+            dist/snake.svg?color_snake=#0e7490&color_dots=#e6e9f2,#bce7f0,#7cd0e2,#35a8c4,#0e7490
+
+      - name: Publish to the output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

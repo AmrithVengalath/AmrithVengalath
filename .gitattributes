@@ -1,0 +1,3 @@
+# refresh.mjs always writes LF. Without this, a Windows checkout turns the
+# generated files CRLF and every run reports a diff that is only line endings.
+* text=auto eol=lf
