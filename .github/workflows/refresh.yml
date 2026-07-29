@@ -22,7 +22,13 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
+      # ref: main, not the default github.sha, so a run queued behind another
+      # one (schedule plus a manual dispatch landing seconds apart, say)
+      # checks out whatever main is by the time it actually starts rather
+      # than the stale commit that was current when it was queued.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -46,7 +52,20 @@ jobs:
           fi
           git add -A
           git commit -m "Refresh generated profile cards and post list"
-          git push
+          # ref: main above already narrows this, but belt and suspenders:
+          # if another run still won the push, replay ours on top rather
+          # than fail outright. Every file here is fully regenerated, not
+          # hand edited, so "ours" is a safe conflict resolution.
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "push rejected on attempt $attempt, rebasing onto the latest main"
+            git fetch origin main
+            git rebase -X ours origin/main
+          done
+          echo "still rejected after 3 attempts"
+          exit 1
 
       - name: Surface source failures
         if: steps.generate.outcome == 'failure'

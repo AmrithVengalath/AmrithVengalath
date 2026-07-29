@@ -26,6 +26,7 @@ import path from "node:path";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ASSETS = path.join(ROOT, "assets");
 const README = path.join(ROOT, "README.md");
+const CACHE_FILE = path.join(ROOT, "scripts", "cache.json");
 const DEMO = process.argv.includes("--demo");
 
 /* ------------------------------------------------------------------ config */
@@ -158,6 +159,20 @@ async function writeIfChanged(file, content) {
   if (existsSync(file) && (await readFile(file, "utf8")) === content) return false;
   await writeFile(file, content, "utf8");
   return true;
+}
+
+/**
+ * The last values every source actually returned, committed alongside the
+ * generated cards. A failing source falls back to this, not to sample data,
+ * so a persistent block (a WAF, a rate limit) freezes the page instead of
+ * quietly overwriting real numbers and post titles with placeholders.
+ */
+async function loadCache() {
+  try {
+    return JSON.parse(await readFile(CACHE_FILE, "utf8"));
+  } catch {
+    return null;
+  }
 }
 
 /* --------------------------------------------------------------- fetch: npm */
@@ -563,26 +578,63 @@ async function main() {
     d = demoData();
     console.log("demo mode: rendering from sample data, no network calls");
   } else {
-    const fallback = demoData();
+    // demoData() only backstops a field with no cache yet, i.e. the very
+    // first run in a fresh clone. Every run after that falls back to what
+    // was last actually observed, cached below.
+    const cache = await loadCache();
+    const demoFallback = demoData();
+    const cachedTool = (npm) =>
+      cache?.tools?.find((t) => t.npm === npm) ??
+      demoFallback.tools.find((t) => t.npm === npm);
+
     const tools = await Promise.all(
-      TOOLS.map(async (tool, i) => ({
-        ...tool,
-        ...(await safe(`npm ${tool.npm}`, () => fetchPackage(tool), {
-          version: fallback.tools[i].version,
-          downloads: fallback.tools[i].downloads,
-        })),
-        ...(await safe(`repo ${tool.owner}/${tool.repo}`, () => fetchRepo(tool), {
-          stars: fallback.tools[i].stars,
-          forks: fallback.tools[i].forks,
-        })),
-      }))
+      TOOLS.map(async (tool) => {
+        const prior = cachedTool(tool.npm);
+        return {
+          ...tool,
+          ...(await safe(`npm ${tool.npm}`, () => fetchPackage(tool), {
+            version: prior.version,
+            downloads: prior.downloads,
+          })),
+          ...(await safe(`repo ${tool.owner}/${tool.repo}`, () => fetchRepo(tool), {
+            stars: prior.stars,
+            forks: prior.forks,
+          })),
+        };
+      })
     );
     d = {
       tools,
-      account: await safe("account", fetchAccount, fallback.account),
-      contrib: await safe("contributions", fetchContributions, fallback.contrib),
-      posts: await safe("feed", fetchPosts, fallback.posts),
+      account: await safe(
+        "account",
+        fetchAccount,
+        cache?.account ?? demoFallback.account
+      ),
+      contrib: await safe(
+        "contributions",
+        fetchContributions,
+        cache?.contrib ?? demoFallback.contrib
+      ),
+      posts: await safe("feed", fetchPosts, cache?.posts ?? demoFallback.posts),
     };
+
+    const nextCache = {
+      tools: tools.map((t) => ({
+        npm: t.npm,
+        version: t.version,
+        downloads: t.downloads,
+        stars: t.stars,
+        forks: t.forks,
+      })),
+      account: d.account,
+      contrib: d.contrib,
+      posts: d.posts,
+    };
+    if (
+      await writeIfChanged(CACHE_FILE, JSON.stringify(nextCache, null, 2) + "\n")
+    ) {
+      console.log("cache: scripts/cache.json updated");
+    }
   }
 
   const written = [];

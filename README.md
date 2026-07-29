@@ -85,11 +85,11 @@ Vendor neutral OTA rollout safety. Session tagging, update probation, crash loop
 | | |
 | --- | --- |
 | Jul 26, 2026 | [react-native-release-health: catching a bad OTA update before your users do](https://vengalath.com/blog/react-native-release-health-ota-rollout-safety/) |
-| Jul 13, 2026 | [We ran rn-doctor on 20 popular React Native templates, here is what is dying inside them](https://vengalath.com/blog/we-ran-rn-doctor-on-20-popular-react-native-templates/) |
+| Jul 13, 2026 | [We ran rn-doctor on 20 popular React Native templates - here's what's dying inside them](https://vengalath.com/blog/we-ran-rn-doctor-on-20-popular-react-native-templates/) |
 | Jul 12, 2026 | [Why universal links and Android App Links break (10 fixes)](https://vengalath.com/blog/why-universal-links-and-android-app-links-break/) |
-| Apr 21, 2026 | [Seven years shipping cross platform apps: what I actually learned](https://vengalath.com/blog/seven-years-shipping-cross-platform-apps-release-engineering-lessons/) |
+| Apr 21, 2026 | [Seven years shipping cross-platform apps: what I actually learned](https://vengalath.com/blog/seven-years-shipping-cross-platform-apps-release-engineering-lessons/) |
 
-<sub>45 posts and counting at [vengalath.com/blog](https://vengalath.com/blog/) · [RSS](https://vengalath.com/feed.xml)</sub>
+<sub>46 posts and counting at [vengalath.com/blog](https://vengalath.com/blog/) · [RSS](https://vengalath.com/feed.xml)</sub>
 <!--END:posts-->
 
 ## Track record
