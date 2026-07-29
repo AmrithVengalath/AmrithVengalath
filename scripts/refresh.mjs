@@ -350,7 +350,7 @@ function banner(t) {
   <text x="440" y="72" text-anchor="middle" font-family="${MONO}" font-size="44" font-weight="700" letter-spacing="4" fill="${t.ink}">AMRITH VENGALATH</text>
   <rect x="240" y="92" width="400" height="2" fill="url(#rule)"/>
   <text x="440" y="122" text-anchor="middle" font-family="${MONO}" font-size="19" letter-spacing="1.5" fill="${t.glow}">senior software engineer</text>
-  <text x="440" y="152" text-anchor="middle" font-family="${MONO}" font-size="16" letter-spacing="0.5" fill="${t.muted}">react native . flutter . next.js . release engineering</text>
+  <text x="440" y="152" text-anchor="middle" font-family="${MONO}" font-size="16" letter-spacing="0.5" fill="${t.muted}">react native . flutter . next.js</text>
 </svg>
 `;
 }

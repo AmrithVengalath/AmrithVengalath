@@ -3,7 +3,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img alt="Amrith Vengalath, Senior Software Engineer, React Native, Flutter, Next.js, release engineering" src="assets/banner-dark.svg" width="880">
+  <img alt="Amrith Vengalath, Senior Software Engineer, React Native, Flutter, Next.js" src="assets/banner-dark.svg" width="880">
 </picture>
 
 <br>
