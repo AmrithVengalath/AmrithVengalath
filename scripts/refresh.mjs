@@ -131,9 +131,20 @@ async function safe(label, fn, fallback) {
   }
 }
 
+/**
+ * vengalath.com sits behind Cloudflare, which returns 403 for the plain
+ * `AmrithVengalath-profile-readme` UA GitHub Actions runners were sending
+ * (npm and the GitHub API never blocked it, only the feed did). A normal
+ * browser UA and Accept headers clear it.
+ */
 async function getText(url) {
   const res = await fetch(url, {
-    headers: { "user-agent": `${LOGIN}-profile-readme` },
+    headers: {
+      "user-agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+      accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "accept-language": "en-US,en;q=0.9",
+    },
     signal: AbortSignal.timeout(20_000),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
