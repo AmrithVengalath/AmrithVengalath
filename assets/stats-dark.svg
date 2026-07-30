@@ -9,7 +9,7 @@
   <line x1="24" y1="132" x2="396" y2="132" stroke="rgba(255,255,255,0.10)"/>
   <text x="24" y="152" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="20" font-weight="700" fill="#e8ebf4">3</text>
   <text x="24" y="171" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="0.8" fill="#7f88a3">packages</text>
-  <text x="148" y="152" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="20" font-weight="700" fill="#e8ebf4">21</text>
+  <text x="148" y="152" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="20" font-weight="700" fill="#e8ebf4">27</text>
   <text x="148" y="171" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="0.8" fill="#7f88a3">stars</text>
   <text x="272" y="152" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="20" font-weight="700" fill="#e8ebf4">MIT</text>
   <text x="272" y="171" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="0.8" fill="#7f88a3">all three</text>

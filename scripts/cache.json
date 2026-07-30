@@ -4,27 +4,27 @@
       "npm": "react-native-doctor-ci",
       "version": "0.1.3",
       "downloads": 651,
-      "stars": 7,
+      "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-deeplink-devtools",
       "version": "0.1.1",
       "downloads": 691,
-      "stars": 7,
+      "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-release-health",
       "version": "0.1.0",
       "downloads": 286,
-      "stars": 7,
+      "stars": 9,
       "forks": 0
     }
   ],
   "account": {
     "repos": 20,
-    "followers": 5,
+    "followers": 6,
     "joined": 2017
   },
   "contrib": {
@@ -1868,10 +1868,15 @@
         "date": "2026-07-29",
         "level": 1,
         "count": 2
+      },
+      {
+        "date": "2026-07-30",
+        "level": 1,
+        "count": 2
       }
     ],
-    "total": 232,
-    "activeDays": 30,
+    "total": 234,
+    "activeDays": 31,
     "busiest": 47
   },
   "posts": {
