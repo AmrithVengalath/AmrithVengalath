@@ -1856,12 +1856,17 @@
       },
       {
         "date": "2026-08-31",
+        "level": 1,
+        "count": 2
+      },
+      {
+        "date": "2026-09-01",
         "level": 0,
         "count": 0
       }
     ],
-    "total": 265,
-    "activeDays": 35,
+    "total": 267,
+    "activeDays": 36,
     "busiest": 47
   },
   "posts": {
