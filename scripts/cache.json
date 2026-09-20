@@ -3,21 +3,21 @@
     {
       "npm": "react-native-doctor-ci",
       "version": "0.2.0",
-      "downloads": 213,
+      "downloads": 212,
       "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-deeplink-devtools",
       "version": "0.1.1",
-      "downloads": 43,
+      "downloads": 36,
       "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-release-health",
       "version": "0.1.0",
-      "downloads": 43,
+      "downloads": 46,
       "stars": 9,
       "forks": 0
     }
@@ -29,41 +29,6 @@
   },
   "contrib": {
     "days": [
-      {
-        "date": "2025-09-14",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-15",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-16",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-17",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-18",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-19",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-20",
-        "level": 0,
-        "count": 0
-      },
       {
         "date": "2025-09-21",
         "level": 0,
@@ -1881,12 +1846,17 @@
       },
       {
         "date": "2026-09-19",
+        "level": 1,
+        "count": 1
+      },
+      {
+        "date": "2026-09-20",
         "level": 0,
         "count": 0
       }
     ],
-    "total": 273,
-    "activeDays": 37,
+    "total": 274,
+    "activeDays": 38,
     "busiest": 47
   },
   "posts": {
