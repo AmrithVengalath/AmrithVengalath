@@ -3,14 +3,14 @@
     {
       "npm": "react-native-doctor-ci",
       "version": "0.2.0",
-      "downloads": 212,
+      "downloads": 211,
       "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-deeplink-devtools",
       "version": "0.1.1",
-      "downloads": 36,
+      "downloads": 34,
       "stars": 9,
       "forks": 0
     },
@@ -1851,6 +1851,11 @@
       },
       {
         "date": "2026-09-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-21",
         "level": 0,
         "count": 0
       }
