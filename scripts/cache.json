@@ -10,7 +10,7 @@
     {
       "npm": "react-native-deeplink-devtools",
       "version": "0.1.1",
-      "downloads": 34,
+      "downloads": 36,
       "stars": 9,
       "forks": 0
     },
@@ -29,41 +29,6 @@
   },
   "contrib": {
     "days": [
-      {
-        "date": "2025-09-21",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-22",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-23",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-24",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-25",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-26",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-09-27",
-        "level": 0,
-        "count": 0
-      },
       {
         "date": "2025-09-28",
         "level": 0,
@@ -1881,6 +1846,11 @@
       },
       {
         "date": "2026-09-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-27",
         "level": 0,
         "count": 0
       }
