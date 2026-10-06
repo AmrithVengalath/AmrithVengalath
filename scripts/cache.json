@@ -3,21 +3,21 @@
     {
       "npm": "react-native-doctor-ci",
       "version": "0.2.0",
-      "downloads": 48,
+      "downloads": 51,
       "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-deeplink-devtools",
       "version": "0.1.1",
-      "downloads": 27,
+      "downloads": 28,
       "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-release-health",
       "version": "0.1.0",
-      "downloads": 50,
+      "downloads": 53,
       "stars": 9,
       "forks": 0
     }
@@ -1858,10 +1858,15 @@
         "date": "2026-10-05",
         "level": 0,
         "count": 0
+      },
+      {
+        "date": "2026-10-06",
+        "level": 1,
+        "count": 2
       }
     ],
-    "total": 282,
-    "activeDays": 41,
+    "total": 284,
+    "activeDays": 42,
     "busiest": 47
   },
   "posts": {
