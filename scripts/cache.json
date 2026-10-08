@@ -1868,10 +1868,15 @@
         "date": "2026-10-07",
         "level": 0,
         "count": 0
+      },
+      {
+        "date": "2026-10-08",
+        "level": 1,
+        "count": 1
       }
     ],
-    "total": 284,
-    "activeDays": 42,
+    "total": 285,
+    "activeDays": 43,
     "busiest": 47
   },
   "posts": {
