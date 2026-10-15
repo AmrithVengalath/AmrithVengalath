@@ -3,7 +3,7 @@
     {
       "npm": "react-native-doctor-ci",
       "version": "0.2.0",
-      "downloads": 50,
+      "downloads": 49,
       "stars": 9,
       "forks": 0
     },
@@ -17,7 +17,7 @@
     {
       "npm": "react-native-release-health",
       "version": "0.1.0",
-      "downloads": 44,
+      "downloads": 42,
       "stars": 9,
       "forks": 0
     }
@@ -1866,6 +1866,11 @@
       },
       {
         "date": "2026-10-14",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-15",
         "level": 0,
         "count": 0
       }
