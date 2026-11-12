@@ -10,14 +10,14 @@
     {
       "npm": "react-native-deeplink-devtools",
       "version": "0.1.1",
-      "downloads": 34,
+      "downloads": 33,
       "stars": 9,
       "forks": 0
     },
     {
       "npm": "react-native-release-health",
       "version": "0.1.0",
-      "downloads": 15,
+      "downloads": 16,
       "stars": 9,
       "forks": 0
     }
@@ -1866,6 +1866,11 @@
       },
       {
         "date": "2026-11-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-12",
         "level": 0,
         "count": 0
       }
